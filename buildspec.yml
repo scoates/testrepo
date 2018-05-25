@@ -1,0 +1,11 @@
+version: 0.2
+
+env:
+    variables:
+        QUEUE_NAME: "errbot-facultybot.fifo"
+        IRC_CHANNEL: "#seantest"
+
+phases:
+  build:
+    commands:
+      - echo "BUILDING"
