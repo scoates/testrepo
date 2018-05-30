@@ -4,6 +4,7 @@ if [ -f $CODEBUILD_SRC_DIR/system/build/$1 ]; then
     source $CODEBUILD_SRC_DIR/system/build/codebuild_extras
 
     set -x
+    $CODEBUILD_SRC_DIR/system/ircmsg Starting phase $1
     source $CODEBUILD_SRC_DIR/system/build/$1  # always wrap these with a shell script
 
 fi
