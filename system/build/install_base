@@ -1,0 +1,7 @@
+#!/bin/bash
+set -x
+
+# need boto
+pip freeze | grep boto3 || pip install boto3
+
+$CODEBUILD_SRC_DIR/system/ircmsg Starting build for branch $BUILDSHOT_BRANCH

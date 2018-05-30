@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -x
+
+$CODEBUILD_SRC_DIR/system/ircmsg Not really doing build.

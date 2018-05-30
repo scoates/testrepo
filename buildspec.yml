@@ -6,6 +6,17 @@ env:
         IRC_CHANNEL: "#seantest"
 
 phases:
+  install:
+    commands:
+      - system/build/install_base
+      - system/build/conditional_phase install
+  pre_build:
+    commands:
+      - system/build/conditional_phase pre_build
   build:
     commands:
-      - echo "BUILDING"
+      - system/build/conditional_phase build
+  post_build:
+    commands:
+      - system/build/conditional_phase post_build
+      - system/build/conditional_phase finalizing
