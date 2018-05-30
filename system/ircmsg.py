@@ -18,7 +18,7 @@ def send_message(message):
 
     if os.environ.get('CODEBUILD_BUILD_ID'):
         build_name, build_id = os.environ.get('CODEBUILD_BUILD_ID').split(':', 1)
-        short_build_id = "{}:{}".format(build_name[len("build-"):], build_id.split('-', 1)[0])
+        short_build_id = "{}:{}".format(build_name, build_id.split('-', 1)[0])
         message = "build({}) ".format(short_build_id) + message
 
     queue.send_message(
