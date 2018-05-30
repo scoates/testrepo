@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+yum install -y git
+
 # need boto
 pip freeze | grep boto3 || pip install boto3
 
