@@ -3,5 +3,4 @@ set -x
 
 if [ -f $CODEBUILD_SRC_DIR/requirements.txt ]; then
     pip install -r $CODEBUILD_SRC_DIR/requirements.txt
-    $CODEBUILD_SRC_DIR/system/ircmsg Install phase complete.
 fi

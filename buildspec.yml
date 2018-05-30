@@ -8,15 +8,15 @@ env:
 phases:
   install:
     commands:
-      - system/build/install_base
-      - system/build/conditional_phase install
+      - pip install https://s3.amazonaws.com/faculty-captured/faci-0.0.1.tar.gz
+      - faci phase install
   pre_build:
     commands:
-      - system/build/conditional_phase pre_build
+      - faci phase pre_build
   build:
     commands:
-      - system/build/conditional_phase build
+      - faci phase build
   post_build:
     commands:
-      - system/build/conditional_phase post_build
-      - system/build/conditional_phase finalizing
+      - faci phase post_build
+      - faci phase finalizing

@@ -2,7 +2,7 @@
 set -x
 
 if [[ "$CODEBUILD_BUILD_SUCCEEDING" == "1" ]]; then
-    $CODEBUILD_SRC_DIR/system/ircmsg Build for branch $BUILDSHOT_BRANCH succeeded.
+    faci msg Build for branch $BUILDSHOT_BRANCH succeeded.
 else
-    $CODEBUILD_SRC_DIR/system/ircmsg Build for branch $BUILDSHOT_BRANCH failed.
+    faci msg Build for branch $BUILDSHOT_BRANCH failed.
 fi
