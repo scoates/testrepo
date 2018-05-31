@@ -5,12 +5,12 @@ if [[ "$CODEBUILD_BUILD_SUCCEEDING" == "1" ]]; then
     if [[ "$BUILDSHOT_PR" == "" ]]; then
         faci msg Build for branch $BUILDSHOT_BRANCH succeeded.
     else
-        faci msg Build for PR $BUILDSHOT_PR ($BUILDSHOT_BRANCH) succeeded.
+        faci msg Build for PR $BUILDSHOT_PR / $BUILDSHOT_BRANCH succeeded.
     fi
 else
     if [[ "$BUILDSHOT_PR" == "" ]]; then
         faci msg Build for branch $BUILDSHOT_BRANCH failed.
     else
-        faci msg Build for PR $BUILDSHOT_PR ($BUILDSHOT_BRANCH) failed.
+        faci msg Build for PR $BUILDSHOT_PR / $BUILDSHOT_BRANCH failed.
     fi
 fi
