@@ -9,6 +9,7 @@ phases:
   install:
     commands:
       - pip install https://s3.amazonaws.com/faculty-captured/faci-0.0.1.tar.gz
+      - faci msg Starting build at ${BUILDSHOT_URL_PREFIX}/builds/$(faci build_id)
       - faci phase install
   pre_build:
     commands:
