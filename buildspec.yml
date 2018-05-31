@@ -8,7 +8,7 @@ env:
 phases:
   install:
     commands:
-      - pip install https://s3.amazonaws.com/faculty-captured/faci-0.0.4.tar.gz
+      - pip install https://s3.amazonaws.com/faculty-captured/faci-0.0.5.tar.gz
       - faci notify
       - faci phase install
   pre_build:
@@ -20,4 +20,4 @@ phases:
   post_build:
     commands:
       - faci phase post_build
-      - faci phase finalizing
+      - faci finalize
