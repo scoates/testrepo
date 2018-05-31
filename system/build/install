@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+curl -v -H "Authorization: token $CODEBUILD_AUTH_TOKEN" -XPOST https://api.github.com/repos/facultyco/testrepo/statuses/$CODEBUILD_RESOLVED_SOURCE_VERSION -d'{"state": "pending", "target_url": "https://example.com/build/status", "description": "The build has started.", "context": "continuous-integration/buidshot-faci"}'
+
 if [ -f $CODEBUILD_SRC_DIR/requirements.txt ]; then
     pip install -r $CODEBUILD_SRC_DIR/requirements.txt
 fi
