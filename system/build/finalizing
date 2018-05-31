@@ -2,7 +2,15 @@
 set -x
 
 if [[ "$CODEBUILD_BUILD_SUCCEEDING" == "1" ]]; then
-    faci msg Build for branch $BUILDSHOT_BRANCH succeeded.
+    if [[ "$BUILDSHOT_PR" == "" ]]; then
+        faci msg Build for branch $BUILDSHOT_BRANCH succeeded.
+    else
+        faci msg Build for PR $BUILDSHOT_PR ($BUILDSHOT_BRANCH) succeeded.
+    fi
 else
-    faci msg Build for branch $BUILDSHOT_BRANCH failed.
+    if [[ "$BUILDSHOT_PR" == "" ]]; then
+        faci msg Build for branch $BUILDSHOT_BRANCH failed.
+    else
+        faci msg Build for PR $BUILDSHOT_PR ($BUILDSHOT_BRANCH) failed.
+    fi
 fi
