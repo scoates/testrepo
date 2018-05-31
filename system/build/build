@@ -1,6 +1,3 @@
 #!/bin/bash
 
 faci msg Hello from the build.
-
-# danger!
-env
