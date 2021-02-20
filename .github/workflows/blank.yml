@@ -23,8 +23,8 @@ jobs:
     steps:
       - name: setup
         run: |
-          apt install python3-pip
-          pip install -i https://custom-packages.faculty.net faculty-faci
+          sudo apt install python3-pip
+          sudo pip install -i https://custom-packages.faculty.net faculty-faci
 
       - name: tell IRC
         run: 'faci msg "Build starting: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"'
