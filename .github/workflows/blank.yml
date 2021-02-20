@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: setup
-      - run: |
+        run: |
         apt install python3-pip
         pip install -i https://custom-packages.faculty.net faculty-faci
 
