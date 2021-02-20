@@ -34,8 +34,7 @@ jobs:
           pip install -i https://custom-packages.faculty.net faculty-faci
 
       - name: tell IRC
-        run:
-          faci notify
+        run: 'faci msg "Build starting: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"'
 
 
 #      # Runs a set of commands using the runners shell
