@@ -18,16 +18,18 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     env:
-      IRC_CHANNEL: seantest
+      BOT_IRC_CHANNEL: seantest
+      BOT_CLIENT_SECRET: sendinyourart
 
     steps:
       - name: setup
         run: |
-          sudo apt install python3-pip
-          sudo pip3 install -i https://custom-packages.faculty.net faculty-faci
+          wget https://custom-packages.faculty.net/botsay-0.1.0
+          chmod +x botsay-0.1.0
+          sudo mv botsay-0.1.0 /bin/botsay
 
       - name: tell IRC
-        run: 'faci msg "Build starting: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"'
+        run: 'botsay "Build starting: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"'
 
 
 
