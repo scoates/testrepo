@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BOT_IRC_CHANNEL: seantest
-      BOT_CLIENT_SECRET: sendinyourart
+      BOT_CLIENT_SECRET: ${{ secrets.BOT_CLIENT_SECRET }}
 
     steps:
       - name: setup
