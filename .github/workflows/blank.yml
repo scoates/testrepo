@@ -18,13 +18,13 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     env:
-      BOT_IRC_CHANNEL: seantest
+      BOT_IRC_CHANNEL: ops
       BOT_CLIENT_SECRET: ${{ secrets.BOT_CLIENT_SECRET }}
 
     steps:
       - name: setup
         run: |
-          wget https://custom-packages.faculty.net/botsay-0.1.0
+          wget --quiet https://custom-packages.faculty.net/botsay-0.1.0
           chmod +x botsay-0.1.0
           sudo mv botsay-0.1.0 /bin/botsay
 
